@@ -25,6 +25,7 @@ import { Post, postState } from "../../../atoms/PostAtom";
 import { firestore } from "../../../firebase/clientApp";
 import CommentInput from "./CommentInput";
 import CommentItem, { Comment } from "./CommentItem";
+import { User } from "firebase/auth";
 
 type CommentsProps = {
 	user: User | null;
@@ -53,7 +54,7 @@ const Comments: React.FC<CommentsProps> = ({
 
 			const newComment: Comment = {
 				id: commentDocRef.id,
-				creatorId: user.uid,
+				creatorId: user.uid!,
 				creatorDisplayText: user.email!.split("@")[0],
 				communityId,
 				postId: selectedPost?.id!,
@@ -84,7 +85,11 @@ const Comments: React.FC<CommentsProps> = ({
 				} as Post,
 			}));
 		} catch (error) {
-			console.log("onCreateComment error", error);
+			if (error instanceof Error) {
+				console.log(error.message);
+			} else {
+				console.log("Unexpected error", error);
+			}
 		}
 		setCreateLoading(false);
 	};
@@ -115,7 +120,11 @@ const Comments: React.FC<CommentsProps> = ({
 		setComments((prev) => prev.filter((item) => item.id !== comment.id));
 
 		 } catch (error) {
-		 	console.log("onDeleteComment error", error)
+		 if (error instanceof Error) {
+				console.log(error.message);
+			} else {
+				console.log("Unexpected error", error);
+			}
 		 }
     setLoadingDeleteId("");
 	};
@@ -133,7 +142,11 @@ const Comments: React.FC<CommentsProps> = ({
       }));
       setComments(comments as Comment[]);
 		} catch (error) {
-			console.log("getPostComments error", error)
+			if (error instanceof Error) {
+				console.log(error.message);
+			} else {
+				console.log("Unexpected error", error);
+			}
 		}
 		setFetchLoading(false);
 	};
