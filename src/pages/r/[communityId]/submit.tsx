@@ -62,4 +62,4 @@ const SubmitPostPage: React.FC = () => {
 	);
 };
 
-export default submitPostPage;
+export default SubmitPostPage;
