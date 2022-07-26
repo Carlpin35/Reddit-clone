@@ -2,15 +2,15 @@ import React from "react";
 import Head from "next/head";
 import PageContent from "../../../components/layout/PageContent";
 import NewPostForm from "../../../components/Posts/NewPostForm";
-import About from '../../../components/community/About'
+import About from "../../../components/community/About";
 import { Flex, Box, Icon, Image, Text, Button } from "@chakra-ui/react";
 import { auth } from "../../../firebase/clientApp";
 import useCommunityData from "../../../hooks/useCommunityData";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { communityState } from '../../../atoms/communitiesAtom'
-import { useRecoilValue } from 'recoil';
+import { communityState } from "../../../atoms/communitiesAtom";
+import { useRecoilValue } from "recoil";
 
-const submitPostPage: React.FC = () => {
+const SubmitPostPage: React.FC = () => {
 	//const communityStateValue = useRecoilValue
 	const { communityStateValue } = useCommunityData();
 	const [user] = useAuthState(auth);
@@ -37,12 +37,24 @@ const submitPostPage: React.FC = () => {
 					>
 						<Text>Create a Post</Text>
 					</Box>
-					{user && <NewPostForm user={user} communityImageURL={communityStateValue.currentCommunity.imageURL} communityId={communityStateValue.currentCommunity.id} />}
+					{user && (
+						<NewPostForm
+							user={user}
+							communityImageURL={
+								communityStateValue.currentCommunity.imageURL
+							}
+							communityId={
+								communityStateValue.currentCommunity.id
+							}
+						/>
+					)}
 				</>
 
 				<>
-				{ communityStateValue.currentCommunity && (
-                     <About communityData={communityStateValue.currentCommunity} />
+					{communityStateValue.currentCommunity && (
+						<About
+							communityData={communityStateValue.currentCommunity}
+						/>
 					)}
 				</>
 			</PageContent>
