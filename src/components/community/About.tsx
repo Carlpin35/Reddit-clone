@@ -1,6 +1,5 @@
 import React, { useRef, useState } from "react";
 import Link from "next/link";
-import { Community } from "../../atoms/communitiesAtom";
 import {
 	Flex,
 	Icon,
