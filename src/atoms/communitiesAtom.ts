@@ -18,7 +18,7 @@ export interface Community {
 
 interface CommunityState {
 	mySnippets: CommunitySnippet[];
-	currentCommunity?: Community;
+	currentCommunity: Community;
 	snippetsFetched: boolean;
 }
 
