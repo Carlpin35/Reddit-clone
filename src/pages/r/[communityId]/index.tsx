@@ -5,11 +5,11 @@ import { doc, getDoc } from "firebase/firestore";
 import safeJsonStringify from "safe-json-stringify";
 import type { GetServerSidePropsContext } from "next";
 import { Community, communityState } from "../../../atoms/communitiesAtom";
-import CommunityNotFound from "../../../components/Community/CommunityNotFound";
-import Header from "../../../components/Community/Header";
+import CommunityNotFound from "../../../components/community/CommunityNotFound";
+import Header from "../../../components/community/Header";
 import PageContent from "../../../components/layout/PageContent";
-import CreatePostLink from "../../../components/Community/CreatePostLink";
-import About from "../../../components/Community/About";
+import CreatePostLink from "../../../components/community/CreatePostLink";
+import About from "../../../components/community/About";
 import Posts from "../../../components/Posts/Posts";
 import { useSetRecoilState } from "recoil";
 
