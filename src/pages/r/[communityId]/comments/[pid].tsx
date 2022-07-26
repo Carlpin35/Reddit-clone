@@ -9,6 +9,8 @@ import { auth, firestore } from "../../../../firebase/clientApp";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useRouter } from 'next/router';
 import { doc, getDoc } from "firebase/firestore";
+import { Post } from "../../../../atoms/PostAtom";
+import { User } from "firebase/auth";
 
 
 
