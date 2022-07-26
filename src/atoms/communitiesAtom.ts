@@ -23,7 +23,7 @@ interface CommunityState {
 }
 
 
- const defaultCommunityState: communityState = {
+ const defaultCommunityState: CommunityState = {
  	mySnippets: [],
  	snippetsFetched: false,
  } 
