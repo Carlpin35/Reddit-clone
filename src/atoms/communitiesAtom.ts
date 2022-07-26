@@ -22,10 +22,18 @@ interface CommunityState {
 	snippetsFetched: boolean;
 }
 
+export const defaultCommunity: Community = {
+  id: "",
+  creatorId: "",
+  numberOfMembers: 0,
+  privacyType: "public",
+};
+
 
  const defaultCommunityState: CommunityState = {
  	mySnippets: [],
  	snippetsFetched: false,
+ 	currentCommunity: defaultCommunity,
  } 
 
 export const communityState = atom<CommunityState>({
