@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import PageContent from "../../../../components/layout/PageContent";
 import PostItem from "../../../../components/Posts/PostItem";
 import Comments from '../../../../components/Posts/comments/Comments'
-import About from "../../../../components/Community/About";
+import About from "../../../../components/community/About";
 import usePosts from "../../../../hooks/usePosts";
 import useCommunityData from '../../../../hooks/useCommunityData'
 import { auth, firestore } from "../../../../firebase/clientApp";
