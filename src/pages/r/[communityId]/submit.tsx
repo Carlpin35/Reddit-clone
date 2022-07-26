@@ -2,7 +2,7 @@ import React from "react";
 import Head from "next/head";
 import PageContent from "../../../components/layout/PageContent";
 import NewPostForm from "../../../components/Posts/NewPostForm";
-import About from '../../../components/Community/About'
+import About from '../../../components/community/About'
 import { Flex, Box, Icon, Image, Text, Button } from "@chakra-ui/react";
 import { auth } from "../../../firebase/clientApp";
 import useCommunityData from "../../../hooks/useCommunityData";
