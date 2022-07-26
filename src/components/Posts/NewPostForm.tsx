@@ -21,7 +21,7 @@ import {
 } from "firebase/firestore";
 import { getDownloadURL, ref, uploadString } from "firebase/storage";
 import { User } from "firebase/auth";
-import { Post } from "../../../atoms/PostAtom";
+import { Post } from "../../atoms/PostAtom";
 
 type NewPostFormProps = {
 	user: User;
