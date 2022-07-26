@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 import { Flex, Box, Icon, Image, Text, Button } from "@chakra-ui/react";
 
 
 type PageContentProps = {
-
+children?: ReactNode;
 }
 
  const PageContent: React.FC<PageContentProps> = ({ children }) => {
