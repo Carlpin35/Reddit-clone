@@ -26,7 +26,6 @@ import PostItem from "../components/Posts/PostItem";
 import { auth, firestore } from "../firebase/clientApp";
 import usePosts from "../hooks/usePosts";
 import useCommunityData from "../hooks/useCommunityData";
-import moduleName from "../components/community";
 import Premium from "../components/community/Premium";
 import PersonalHome from "../components/community/PersonalHome";
 
