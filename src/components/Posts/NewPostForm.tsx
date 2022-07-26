@@ -20,6 +20,7 @@ import {
 	updateDoc,
 } from "firebase/firestore";
 import { getDownloadURL, ref, uploadString } from "firebase/storage";
+import { User } from "firebase/auth";
 
 type NewPostFormProps = {
 	user: User;
