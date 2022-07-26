@@ -8,9 +8,11 @@ import { FIREBASE_ERRORS } from "../../../firebase/errors";
 import { firestore } from '../../../firebase/clientApp';
 import { setDoc, collection, doc  } from 'firebase/firestore';
 
+type SignUpProps = {
+  toggleView: (view: ModalView) => void;
+};
 
-
-const SignUp: React.FC<SignUpProps> = () => {
+const SignUp: React.FC<SignUpProps> = ({ toggleView }) => {
 	const setAuthModalState = useSetRecoilState(authModalState);
 	const [signUpForm, setSignUpForm] = useState({
 		email: "",
@@ -147,13 +149,8 @@ const SignUp: React.FC<SignUpProps> = () => {
 					color="blue.500"
 					fontWeight={700}
 					cursor="pointer"
-					onClick={() =>
-						setAuthModalState((prev) => ({
-							...prev,
-							view: "login",
-						}))
-					}
-				>
+					onClick={() => toggleView("login")}
+				  >
 					LOG IN
 				</Text>
 			</Flex>
