@@ -20,7 +20,7 @@ import {
 	IoArrowUpCircleSharp,
 	IoBookmarkOutline,
 } from "react-icons/io5";
-import { Post } from "../../../atoms/PostAtom";
+import { Post } from "../../atoms/PostAtom";
 import moment from "moment";
 import { useRouter } from "next/router";
 
