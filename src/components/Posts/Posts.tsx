@@ -38,7 +38,7 @@ const Posts: React.FC<PostsProps> = ({ communityData }) => {
 			//get posts for community
 			const postsQuery = query(
 				collection(firestore, "posts"),
-				where("communityId", "==", communityData.id),
+				where("communityId", "==", communityData?.id!),
 				orderBy("createdAt", "desc")
 			);
 			const postsDocs = await getDocs(postsQuery);
