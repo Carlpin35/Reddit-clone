@@ -28,7 +28,7 @@ import CommentItem, { Comment } from "./CommentItem";
 
 
 type CommentsProps = {
-	user?: User | null;
+	user: User;
 	selectedPost: Post | null;
 	communityId: string;
 };
