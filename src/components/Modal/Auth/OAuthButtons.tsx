@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { Flex, Button, Image, Text } from '@chakra-ui/react';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { auth, firestore } from "../../../firebase/clientApp";
+import { User } from 'firebase/auth'
 import {doc, setDoc} from 'firebase/firestore'
 
 
@@ -10,8 +11,9 @@ const [signInWithGoogle, userCred, loading, error] = useSignInWithGoogle(auth);
 
 
   const createUserDocument = async (user: User) => {
-         userDocRef = doc(firestore, 'users', user.uid);
+        const userDocRef = doc(firestore, 'users', user.uid);
    	await setDoc(userDocRef, JSON.parse(JSON.stringify(user)));
+   	console.log(userDocRef)
    };
 
 

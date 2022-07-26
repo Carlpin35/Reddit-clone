@@ -4,6 +4,7 @@ import { useSetRecoilState } from "recoil";
 import { authModalState } from "../../../atoms/authModalAtom";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { auth } from "../../../firebase/clientApp";
+import { User } from 'firebase/auth'
 import { FIREBASE_ERRORS } from "../../../firebase/errors";
 import { firestore } from '../../../firebase/clientApp';
 import { setDoc, collection, doc  } from 'firebase/firestore';
