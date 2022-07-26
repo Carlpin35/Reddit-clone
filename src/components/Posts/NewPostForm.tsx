@@ -26,6 +26,7 @@ import { Post } from "../../atoms/PostAtom";
 type NewPostFormProps = {
 	user: User;
 	communityImageURL?: string;
+	communityId: string;
 };
 
 const formTabs: TabItem[] = [
@@ -56,7 +57,7 @@ export type TabItem = {
 	icon: typeof Icon.arguments;
 };
 
-const NewPostForm: React.FC<NewPostFormProps> = ({ user, communityImageURL }) => {
+const NewPostForm: React.FC<NewPostFormProps> = ({ user, communityImageURL, communityId }) => {
 	const router = useRouter();
 	const [selectedTab, setSelectedTab] = useState(formTabs[0].title);
 	const [textInputs, setTextInputs] = useState({
@@ -72,7 +73,7 @@ const NewPostForm: React.FC<NewPostFormProps> = ({ user, communityImageURL }) =>
 		const { communityId } = router.query;
 		//create new post object type => post
 		const newPost: Post = {
-			communityId: communityId as string,
+			communityId: communityId,
 			communityImageURL: communityImageURL || '',
 			creatorId: user?.uid,
 			creatorDisplayName: user.email!.split("@")[0],
