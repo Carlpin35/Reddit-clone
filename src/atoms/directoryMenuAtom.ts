@@ -1,5 +1,5 @@
 import { atom } from 'recoil';
-import { iconType } from 'react-icons';
+import { IconType } from 'react-icons';
 import { TiHome } from 'react-icons/ti'
 
 export type DirectoryMenuItem = {
