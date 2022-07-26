@@ -1,5 +1,6 @@
 import React from "react";
 import { Flex, Box, Icon, Image, Text, Button } from "@chakra-ui/react";
+import { TabItem } from "./NewPostForm";
 
 type TabItemProps = {
 	item: TabItem;
